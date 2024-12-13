@@ -1,3 +1,5 @@
+
+import { color, easeOut, motion } from "framer-motion";
 import React from 'react'
 
 export const Banner = () => {
@@ -11,13 +13,21 @@ export const Banner = () => {
       className="max-w-sm rounded-lg shadow-2xl" />
    </figure>
     <div className='w-1/2'>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
+      <motion.h1 className="text-5xl font-bold"
+      animate={{x:40}}
+      transition={{duration:2,delay:2,ease:easeOut,repeat:Infinity}}
+      >Find Your <motion.span
+      animate={{color:['#33ffe9','#334cff']}}
+      transition={{ duration: 3, repeat: Infinity}}
+      >Dream</motion.span> Job!</motion.h1>
+
       <p className="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      Explore thousands of job opportunities across various industries. Create your profile, apply effortlessly,
+       and take the next step in your career journey.
       </p>
       <button className="btn btn-primary">Get Started</button>
     </div>
+    
   </div>
 </div>
     </div>
