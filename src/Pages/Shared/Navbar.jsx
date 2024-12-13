@@ -6,7 +6,16 @@ import AuthContext from "../../Context/AuthContext";
 
 export const Navbar = () => {
   const [open,setOpen]=useState(false)
-  const {user}=useContext(AuthContext)
+  const {user,signoutuser}=useContext(AuthContext)
+  const handlesignout=()=>{
+    signoutuser()
+    .then(() => {
+      // Sign-out successful.
+      console.log("Sign-out successful");
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
     const links=<>
     <Link to={"/" } className="font-medium">Home</Link>
     <a href="">Home</a>
@@ -50,7 +59,7 @@ export const Navbar = () => {
 
 </div>
 
-      <a className="btn btn-ghost text-xl">daisyUI</a>
+      <a className="btn btn-ghost text-xl">Job Portal</a>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
@@ -58,8 +67,16 @@ export const Navbar = () => {
       </ul>
     </div>
     <div className="navbar-end space-x-2">
-        <Link to={"/register"}>Register</Link>
-      <Link to={"/signin"} className="btn btn-primary">Sign In</Link>
+      {
+        user?
+        <button onClick={handlesignout} className="btn btn-primary font-medium">Sign Out</button>
+        :
+        <>
+           <Link to={"/register"}>Register</Link>
+           <Link to={"/signin"} className="btn btn-primary">Sign In</Link>
+        </>
+      }
+     
     </div>
   </div>
   
