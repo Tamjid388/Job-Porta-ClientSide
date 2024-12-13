@@ -31,9 +31,9 @@ createUser(email,password)
 
     }
   return (
-    <div className='flex md:flex-row flex-col-reverse justify-center items-center  '>
+    <div className='flex md:flex-row flex-col-reverse justify-center items-center  md:h-screen'>
      
-        <div className="w-full    max-w-lg  shadow-lg p-4 bg-base-200 rounded-lg">
+        <div className="w-full     max-w-lg  shadow-lg p-4 bg-base-200 rounded-lg">
             
         <form onSubmit={handleSubmit}>
             {/* Name Field */}
@@ -91,7 +91,7 @@ createUser(email,password)
         
         </div>
     
-      <div className='w-80 '>
+      <div className='p-14'>
             <Lottie animationData={regANime}></Lottie>
           </div>
 

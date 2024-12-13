@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { Link } from 'react-router-dom'
 import { CgClose } from "react-icons/cg";
+import AuthContext from "../../Context/AuthContext";
 
 export const Navbar = () => {
   const [open,setOpen]=useState(false)
+  const {user}=useContext(AuthContext)
     const links=<>
+    <Link to={"/" } className="font-medium">Home</Link>
     <a href="">Home</a>
     <a href="">Home</a>
     <a href="">Home</a>
@@ -54,9 +57,9 @@ export const Navbar = () => {
       {links}
       </ul>
     </div>
-    <div className="navbar-end">
+    <div className="navbar-end space-x-2">
         <Link to={"/register"}>Register</Link>
-      <a className="btn btn-primary">Sign In</a>
+      <Link to={"/signin"} className="btn btn-primary">Sign In</Link>
     </div>
   </div>
   
