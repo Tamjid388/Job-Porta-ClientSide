@@ -39,7 +39,7 @@ export const Navbar = () => {
         </ul>
       </div> */}
 
-<div className=" shadow-xl" onClick={()=>setOpen(!open)}>
+<div className="md:hidden shadow-xl" onClick={()=>setOpen(!open)}>
   {
     open? <CgClose className=" bg-base-200 text-2xl " />:
     <IoMdMenu className=" bg-base-200 text-2xl "/>

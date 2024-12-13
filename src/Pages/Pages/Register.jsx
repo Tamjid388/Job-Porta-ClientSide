@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import regANime from "../../assets/lottie/register_ANimation.json"
 import Lottie from 'lottie-react'
+import AuthContext from '../../Context/AuthContext'
 
 export const Register = () => {
+  const {createUser}=useContext(AuthContext)
     function handleSubmit(e){
-e.preventdefault()
+e.preventDefault();
 const form =e.target
 const name=form.name.value
 const email=form.email.value;
 const password=form.password.value;
 // pass validation
 const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+createUser(email,password)
+.then((userCredential) => {
+  // Signed up 
+  const user = userCredential.user;
+  console.log(user);
+  
+  // ...
+})
+.catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  console.log(errorMessage);
+  // ..
+});
 
     }
   return (
