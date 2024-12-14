@@ -18,6 +18,7 @@ export const Navbar = () => {
   }
     const links=<>
     <Link to={"/" } className="font-medium">Home</Link>
+   
     <a href="">Home</a>
     <a href="">Home</a>
     <a href="">Home</a>

@@ -6,6 +6,7 @@ import { MainLayout } from "../Layout/MainLayout";
 import { Home } from "../Pages/Pages/Home";
 import { Register } from "../Pages/Pages/Register";
 import { Signin } from "../Pages/Pages/Signin";
+import { JobDetails } from "../Pages/Pages/JobDetails/JobDetails";
 
 
 
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
         {
             path:"/",
             element:<Home></Home>
+        },
+        {
+            path:"/jobs/:id",
+            element:<JobDetails></JobDetails>
         },
         {
             path:"/register",
