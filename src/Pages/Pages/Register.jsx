@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import regANime from "../../assets/lottie/register_ANimation.json"
 import Lottie from 'lottie-react'
 import AuthContext from '../../Context/AuthContext'
+import Social from '../Shared/social'
+import { Navigate } from 'react-router-dom'
 
 export const Register = () => {
   const {createUser}=useContext(AuthContext)
@@ -19,6 +21,7 @@ createUser(email,password)
   // Signed up 
   const user = userCredential.user;
   console.log(user);
+
   
   // ...
 })
@@ -86,6 +89,10 @@ createUser(email,password)
               <button type="submit" className="btn btn-primary">
                 Register
               </button>
+            </div>
+
+            <div className='btn w-full btn-outline mt-3'>
+              <Social></Social>
             </div>
           </form>
         
