@@ -1,8 +1,13 @@
 import React, { useContext } from 'react'
 import AuthContext from '../../Context/AuthContext';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Signin = () => {
     const {signin}=useContext(AuthContext)
+    const location=useLocation()
+    const navigate=useNavigate()
+    console.log("Sign In PAge:",location);
+    const form=location.state || '/'
     const handleSubmit=(e)=>{
         e.preventDefault();
         const form =e.target
@@ -15,6 +20,7 @@ export const Signin = () => {
             const user = userCredential.user;
             setUser(user);
             console.log(user);
+            navigate(from)
             // ...
           })
           .catch((error) => {

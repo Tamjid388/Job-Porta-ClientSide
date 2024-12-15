@@ -1,11 +1,11 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import image0 from "../../../assets/team3.jpg"
 import { PiToolbox } from 'react-icons/pi'
 
 export const JobDetails = () => {
     const job=useLoaderData()
-    const {title,location,jobType,category,applicationDeadline,salaryRange,description
+    const { title,location,jobType,category,applicationDeadline,salaryRange,description
         ,company,requirements,responsibilities,hr_email,hr_name,company_logo ,_id 
       }=job
   return (
@@ -28,7 +28,9 @@ export const JobDetails = () => {
     <li>Strong understanding of user experience principles and design best practices.</li>
     <li>Experience with design tools like Figma, Photoshop, and Illustrator.</li>
 </ul>
-<button className='btn btn-primary'>Apply Now</button>
+<Link to={`jobapply/${_id}`}>
+<button className='btn btn-primary px-8 '>Apply Now</button>
+</Link>
 
 
 <hr className='my-20' />
