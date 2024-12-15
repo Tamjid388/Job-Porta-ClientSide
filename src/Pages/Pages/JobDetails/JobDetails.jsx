@@ -28,7 +28,7 @@ export const JobDetails = () => {
     <li>Strong understanding of user experience principles and design best practices.</li>
     <li>Experience with design tools like Figma, Photoshop, and Illustrator.</li>
 </ul>
-<Link to={`jobapply/${_id}`}>
+<Link to={`/jobApply/${_id}`}>
 <button className='btn btn-primary px-8 '>Apply Now</button>
 </Link>
 
