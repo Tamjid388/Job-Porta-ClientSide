@@ -16,12 +16,10 @@ export const Navbar = () => {
       // An error happened.
     });
   }
-    const links=<>
-    <Link to={"/" } className="font-medium">Home</Link>
-   
-    <a href="">Home</a>
-    <a href="">Home</a>
-    <a href="">Home</a>
+    const links=< >
+    <Link to={"/" } className="text-xl font-medium text-primary">Home</Link>
+    <Link to={"/myapplications" } className="text-xl font-medium text-primary">My Applications</Link>
+     
     </>
   return (
     <nav>

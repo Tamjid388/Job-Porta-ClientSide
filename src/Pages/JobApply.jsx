@@ -1,8 +1,22 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+
+import AuthContext from '../Context/AuthContext'
+import useAuth from '../Hooks/UseAuth'
+import Swal from 'sweetalert2'
 
 export const JobApply = () => {
     const {id}=useParams()
+    const navigate=useNavigate()
+    // const {user}=useAuth()
+    // console.log(user);
+    const {user}=useContext(AuthContext)
+    console.log(user);
+ 
+
+
+
+
     const submitJobapplycation=(e)=>{
         e.preventDefault()
         const form=e.target
@@ -10,7 +24,41 @@ export const JobApply = () => {
         const GitHub=form.githubUrl.value
         const Resume=form.resumeUrl.value
         const values={LinkedIn,GitHub,Resume}
+
         console.log(values);
+
+
+        const jobApplication={
+          job_id:id,
+          applicant_email:user.email,
+          GitHub,
+          LinkedIn,Resume
+}
+fetch(`http://localhost:5000/job-application`,{
+  method:'POST',
+  headers:{
+    'content-type':'application/json'
+
+  },
+  body:JSON.stringify(jobApplication)
+})
+.then(res=>res.json())
+.then(data=>{
+  if(data.insertedId){
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Successfully Submitted",
+      showConfirmButton: false,
+      timer: 1500
+    });
+    navigate('/myapplications')
+  }
+})
+
+
+
+
     }
   
   return (
@@ -105,7 +153,7 @@ export const JobApply = () => {
               className="textarea textarea-bordered w-full"
               placeholder="Tell us why you are a good fit for this role"
               rows="4"
-              required
+           
             ></textarea>
           </div>
 
