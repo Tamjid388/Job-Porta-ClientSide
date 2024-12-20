@@ -2,14 +2,15 @@ import React, { useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import AuthContext from '../Context/AuthContext'
-import useAuth from '../Hooks/UseAuth'
+
 import Swal from 'sweetalert2'
+import useAuth from '../Hooks/UseAuth'
 
 export const JobApply = () => {
     const {id}=useParams()
     const navigate=useNavigate()
+
     // const {user}=useAuth()
-    // console.log(user);
     const {user}=useContext(AuthContext)
     console.log(user);
  

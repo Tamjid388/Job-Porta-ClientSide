@@ -18,7 +18,8 @@ export const Navbar = () => {
   }
     const links=< >
     <Link to={"/" } className="text-xl font-medium text-primary">Home</Link>
-    <Link to={"/myapplications" } className="text-xl font-medium text-primary">My Applications</Link>
+    <Link to={"/myapplications" } className="md:mx-2 text-xl font-medium text-primary">My Applications</Link>
+    <Link to={"/addjob" } className="md:mx-2 text-xl font-medium text-primary">Add Job</Link>
      
     </>
   return (
