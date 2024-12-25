@@ -193,6 +193,7 @@ fetch(`http://localhost:5000/jobs`,{
             <span className="label-text font-semibold">HR Email</span>
           </label>
           <input
+          defaultValue={'ahmed15-4895@diu.edu.bd'}
             type="email"
             name="hr_email"
             placeholder="Enter HR's email"
