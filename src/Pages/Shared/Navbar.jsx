@@ -1,8 +1,12 @@
 import { useContext, useState } from "react";
 import { IoMdMenu } from "react-icons/io";
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { CgClose } from "react-icons/cg";
 import AuthContext from "../../Context/AuthContext";
+import '../../Pages/Shared/navlink.css';
+
+
+
 
 export const Navbar = () => {
   const [open,setOpen]=useState(false)
@@ -16,10 +20,25 @@ export const Navbar = () => {
       // An error happened.
     });
   }
+    // const links=< >
+    // <NavLink to={"/" } className="text-xl font-medium text-primary">Home</NavLink>
+    // <NavLink to={"/myapplications" } className="md:mx-2 text-xl font-medium text-primary">My Applications</NavLink>
+    // <NavLink to={"/addjob" } className="md:mx-2 text-xl font-medium text-primary">Add Job</NavLink>
+     
+    // </>
     const links=< >
-    <Link to={"/" } className="text-xl font-medium text-primary">Home</Link>
-    <Link to={"/myapplications" } className="md:mx-2 text-xl font-medium text-primary">My Applications</Link>
-    <Link to={"/addjob" } className="md:mx-2 text-xl font-medium text-primary">Add Job</Link>
+<li><NavLink to={"/" } className=" font-medium text-primary">Home</NavLink></li>
+<li>
+<NavLink to={"/myapplications" } className="  font-medium text-primary">My Applications</NavLink>
+
+</li>
+<li>
+<NavLink to={"/addjob" } className="  font-medium text-primary">Add Job</NavLink>
+</li>
+<li>
+<NavLink to={"/mypostedjobs" } className="  font-medium text-primary">My Posted Jobs</NavLink>
+</li>
+    
      
     </>
   return (
