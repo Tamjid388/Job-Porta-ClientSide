@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import AuthContext from '../../Context/AuthContext';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export const Signin = () => {
     const {signin}=useContext(AuthContext)
     const location=useLocation()
     const navigate=useNavigate()
-    console.log("Sign In PAge:",location);
-    const form=location.state || '/'
+   
+    const from=location.state || '/'
     const handleSubmit=(e)=>{
         e.preventDefault();
         const form =e.target
@@ -18,10 +19,17 @@ export const Signin = () => {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            setUser(user);
-            console.log(user);
+            // setUser(user);
+            const User={email:email}
+           
+            axios.post('http://localhost:5000/jwt',User,{withCredentials:true})
+            .then(res=>console.log(res.data))
+
+
+
+
             navigate(from)
-            // ...
+         
           })
           .catch((error) => {
             const errorCode = error.code;

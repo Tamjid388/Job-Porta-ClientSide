@@ -15,7 +15,7 @@ src={team1}
 className="max-w-sm rounded-[40px] border-l-4 border-b-4 border-blue-700 rounded-bl-none shadow-2xl" />
    </figure>
     <div className='w-1/2'>
-      <motion.h1 className="text-5xl font-bold"
+      <motion.h1 className="text-5xl font-bold hidden md:block"
       animate={{x:40}}
       transition={{duration:2,delay:2,ease:easeOut,repeat:Infinity}}
       >Find Your <motion.span

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import AuthContext from "../../Context/AuthContext"
 import image1 from '../../assets/resume.jpg'
 import { IoMdRemoveCircle } from "react-icons/io";
+import axios from "axios";
 
 
 
@@ -11,14 +12,22 @@ import { IoMdRemoveCircle } from "react-icons/io";
     const [jobs,setJobs]=useState([])
     useEffect(
         ()=>{
-            fetch(`http://localhost:5000/job-applicant?email=${user.email}`)
-            .then(res=>res.json())
-            .then(data=>{
+          // fetch(`http://localhost:5000/job-applicant?email=${user.email}`)
+          //   .then(res=>res.json())
+          //   .then(data=>{
               
-                setJobs(data)
+          //       setJobs(data)
                 
+          //   })
+            axios.get(`http://localhost:5000/job-applicant?email=${user.email}`,
+              {withCredentials:true}
+            )
+            .then(response => {
+              setJobs(response.data);
+              console.log(response.data);
             })
-            .catch(error => console.error('Error fetching data:', error));  
+
+        
         }
         ,[user.email]
     )
