@@ -3,13 +3,15 @@ import { useContext, useEffect, useState } from "react"
 import AuthContext from "../../Context/AuthContext"
 import image1 from '../../assets/resume.jpg'
 import { IoMdRemoveCircle } from "react-icons/io";
-import axios from "axios";
+import { useAxiosSecure } from "../../Hooks/useAxiosSecure";
+
 
 
 
  const MyApplications=()=>{
     const {user}=useContext(AuthContext)
     const [jobs,setJobs]=useState([])
+const axiosInstance=useAxiosSecure()
     useEffect(
         ()=>{
           // fetch(`http://localhost:5000/job-applicant?email=${user.email}`)
@@ -19,14 +21,19 @@ import axios from "axios";
           //       setJobs(data)
                 
           //   })
-            axios.get(`http://localhost:5000/job-applicant?email=${user.email}`,
-              {withCredentials:true}
-            )
+            // axios.get(`http://localhost:5000/job-applicant?email=${user.email}`,
+            //   {withCredentials:true}
+            // )
+            // .then(response => {
+            //   setJobs(response.data);
+            //   console.log(response.data);
+            // })
+            axiosInstance
+            .get(`job-applicant?email=${user.email}`)
             .then(response => {
               setJobs(response.data);
               console.log(response.data);
             })
-
         
         }
         ,[user.email]
@@ -56,7 +63,7 @@ import axios from "axios";
     <tbody>
       {/* row  */}
       {
-        jobs.map(job=>  <tr>
+        jobs.map((job,idx)=>  <tr key={idx}>
             <th>
               <label>
                 <input type="checkbox" className="checkbox" />
