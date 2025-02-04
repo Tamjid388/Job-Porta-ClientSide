@@ -35,7 +35,7 @@ export const JobApply = () => {
           GitHub,
           LinkedIn,Resume
 }
-fetch(`http://localhost:5000/job-application`,{
+fetch(`https://job-portal-server-three-ashen.vercel.app/job-application`,{
   method:'POST',
   headers:{
     'content-type':'application/json'

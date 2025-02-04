@@ -22,7 +22,7 @@ export const Signin = () => {
             // setUser(user);
             const User={email:email}
            
-            axios.post('http://localhost:5000/jwt',User,{withCredentials:true})
+            axios.post('https://job-portal-server-three-ashen.vercel.app/jwt',User,{withCredentials:true})
             .then(res=>console.log(res.data))
 
 

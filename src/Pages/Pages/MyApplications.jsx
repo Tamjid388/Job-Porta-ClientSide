@@ -14,14 +14,14 @@ import { useAxiosSecure } from "../../Hooks/useAxiosSecure";
 const axiosInstance=useAxiosSecure()
     useEffect(
         ()=>{
-          // fetch(`http://localhost:5000/job-applicant?email=${user.email}`)
+          // fetch(`https://job-portal-server-three-ashen.vercel.app/job-applicant?email=${user.email}`)
           //   .then(res=>res.json())
           //   .then(data=>{
               
           //       setJobs(data)
                 
           //   })
-            // axios.get(`http://localhost:5000/job-applicant?email=${user.email}`,
+            // axios.get(`https://job-portal-server-three-ashen.vercel.app/job-applicant?email=${user.email}`,
             //   {withCredentials:true}
             // )
             // .then(response => {

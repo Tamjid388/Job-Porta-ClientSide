@@ -32,13 +32,13 @@ const loginwithGoogle=()=>{
         console.log("State Captured",currentUser?.email)
         if(currentUser?.email){
           const User={email:currentUser.email}
-          axios.post('http://localhost:5000/jwt',User,{withCredentials:true})
+          axios.post('https://job-portal-server-three-ashen.vercel.app/jwt',User,{withCredentials:true})
           .then(res=>{console.log(res.data)
             setLoading(false)
           })
           .catch(err => console.error(err));
         }else{
-          axios.post('http://localhost:5000/logout',{},{withCredentials:true})
+          axios.post('https://job-portal-server-three-ashen.vercel.app/logout',{},{withCredentials:true})
           .then(res=>{console.log('Logout:',res.data)
             setLoading(false)
           }

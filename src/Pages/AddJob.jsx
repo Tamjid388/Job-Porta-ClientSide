@@ -16,7 +16,7 @@ export const AddJob = () => {
     newdata.description = newdata.description.split("\n");
     console.log(newdata)
 
-fetch(`http://localhost:5000/jobs`,{
+fetch(`https://job-portal-server-three-ashen.vercel.app/jobs`,{
   method:'POST',
   headers:{
     'content-type':'application/json'

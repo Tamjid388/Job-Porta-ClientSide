@@ -9,7 +9,7 @@ console.log(e.target.value,id);
 const data={
     status:e.target.value
 }
-fetch(`http://localhost:5000/job-application/${id}`,{
+fetch(`https://job-portal-server-three-ashen.vercel.app/job-application/${id}`,{
     method:'PATCH',
     headers:{
         'content-type':'application/json'

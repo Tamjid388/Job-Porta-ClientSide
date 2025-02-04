@@ -23,3 +23,22 @@ The application is designed to be intuitive and user-friendly, providing job see
 - **MongoDB** for storing job listings and user data
 - **React Router** for dynamic routing
 - **Context API** for managing authentication state
+
+## Live Link
+
+Once your project is set up and deployed, you can access the live version at:
+
+[**Job Application Portal - Live Demo**](job-portal-7f6b9.web.app/)
+
+---
+
+
+## Installation Instructions
+
+### **1. Clone the Repository**
+First, clone the repository from GitHub to your local machine.
+
+```bash
+git clone https://github.com/your-username/job-application-portal.git
+cd job-application-portal
+npm run dev

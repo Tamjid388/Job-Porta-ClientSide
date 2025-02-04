@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 export const Hotjobs = () => {
     const [jobs,setjobs]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/jobs')
+        fetch('https://job-portal-server-three-ashen.vercel.app/jobs')
         .then(res=>res.json())
         .then(data=>setjobs(data))
     },[])
   return (
     <div>
-      <h1 className='text-4xl font-bold text-primary my-9 text-center'>New Jobs</h1>
+      <h1 className='text-4xl font-bold text-primary my-9 text-center'>New Jobs {jobs.length}</h1>
         <div className='grid grid-cols-1  md:grid-cols-2  lg:grid-cols-4 gap-8 mx-2 my-16'>
             {
                 jobs.map(job=><Hotjobcard key={job._id} job={job}>
