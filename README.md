@@ -24,6 +24,20 @@ The application is designed to be intuitive and user-friendly, providing job see
 - **React Router** for dynamic routing
 - **Context API** for managing authentication state
 
+## 📦 Dependencies Used  
+
+This project utilizes the following key dependencies:  
+
+- **React & React DOM** (`react`, `react-dom`) – Core React libraries  
+- **React Router DOM** (`react-router-dom`) – For navigation between pages  
+- **Firebase** – Handling authentication and Firestore database  
+- **Axios** – HTTP requests for fetching and sending data  
+- **React Icons** – Providing scalable vector icons  
+- **React Lottie** (`lottie-react`) – For displaying animations  
+- **Framer Motion** (`motion`) – Animations and smooth transitions  
+- **SweetAlert2** – Custom pop-up alerts and notifications  
+
+
 ## Live Link
 
 Once your project is set up and deployed, you can access the live version at:
