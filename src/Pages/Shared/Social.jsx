@@ -14,12 +14,15 @@ export const Social = () => {
         .catch(error=>{
             console.log(error.massage);
         })
-        
+        console.log("sadda")
 
     }
   return (
     <div>
-        <button className='' onClick={handlegoogleLogin}>Login With Google</button>
+        <button
+      
+          className='btn w-full btn-outline mt-3'
+           onClick={handlegoogleLogin}>Login With Google</button>
     </div>
   )
 }

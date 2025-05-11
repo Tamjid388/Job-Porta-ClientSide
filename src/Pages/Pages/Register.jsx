@@ -91,11 +91,11 @@ createUser(email,password)
               </button>
             </div>
 
-            <div className='btn w-full btn-outline mt-3'>
-              <Social></Social>
-            </div>
+            
           </form>
-        
+       
+              <Social></Social>
+            
         </div>
     
       <div className='p-14'>

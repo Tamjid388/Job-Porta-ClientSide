@@ -91,7 +91,7 @@ export const Navbar = () => {
         <button onClick={handlesignout} className="btn btn-primary font-medium">Sign Out</button>
         :
         <>
-           <Link to={"/register"}>Register</Link>
+           <Link className="btn btn-outline mr-2 hover:bg-primary" to={"/register"}>Register</Link>
            <Link to={"/signin"} className="btn btn-primary">Sign In</Link>
         </>
       }

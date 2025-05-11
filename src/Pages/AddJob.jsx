@@ -48,6 +48,7 @@ fetch(`https://job-portal-server-three-ashen.vercel.app/jobs`,{
             <span className="label-text font-semibold">Job Title</span>
           </label>
           <input
+          required
             type="text"
             name="title"
             placeholder="Enter job title"
@@ -73,7 +74,7 @@ fetch(`https://job-portal-server-three-ashen.vercel.app/jobs`,{
           <label className="label">
             <span className="label-text font-semibold">Job Type</span>
           </label>
-          <select name="jobType" className="select select-bordered w-full">
+          <select required name="jobType" className="select select-bordered w-full">
             <option value="" disabled >
               Select job type
             </option>
@@ -89,7 +90,7 @@ fetch(`https://job-portal-server-three-ashen.vercel.app/jobs`,{
           <label className="label">
             <span className="label-text font-semibold">Job Fields</span>
           </label>
-          <select name="jobField" className="select select-bordered w-full">
+          <select required name="jobField" className="select select-bordered w-full">
             <option value="" disabled >
               Select job field
             </option>
@@ -141,7 +142,7 @@ fetch(`https://job-portal-server-three-ashen.vercel.app/jobs`,{
           <label className="label">
             <span className="label-text font-semibold">Job Description</span>
           </label>
-          <textarea
+          <textarea required
             name="description"
             placeholder="Enter a detailed job description"
             className="textarea textarea-bordered w-full"

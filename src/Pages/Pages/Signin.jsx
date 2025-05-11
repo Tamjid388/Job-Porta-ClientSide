@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import AuthContext from '../../Context/AuthContext';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Social from '../Shared/social';
 
 export const Signin = () => {
     const {signin}=useContext(AuthContext)
@@ -79,6 +80,8 @@ export const Signin = () => {
           </button>
         </div>
       </form>
+      {/* Google */}
+      <Social></Social>
     </div>
 
     <div className='p-14'>

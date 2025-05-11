@@ -29,7 +29,7 @@ const loginwithGoogle=()=>{
     useEffect(()=>{
      const unsubscribe= onAuthStateChanged(auth,currentUser=>{
         setUser(currentUser)
-        console.log("State Captured",currentUser?.email)
+       
         if(currentUser?.email){
           const User={email:currentUser.email}
           axios.post('https://job-portal-server-three-ashen.vercel.app/jwt',User,{withCredentials:true})
@@ -39,7 +39,8 @@ const loginwithGoogle=()=>{
           .catch(err => console.error(err));
         }else{
           axios.post('https://job-portal-server-three-ashen.vercel.app/logout',{},{withCredentials:true})
-          .then(res=>{console.log('Logout:',res.data)
+          .then(res=>{
+         
             setLoading(false)
           }
 

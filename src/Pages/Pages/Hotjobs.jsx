@@ -5,6 +5,8 @@ import { FaLocationDot } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 export const Hotjobs = () => {
+ 
+  
     const [jobs,setjobs]=useState([])
     useEffect(()=>{
         fetch('https://job-portal-server-three-ashen.vercel.app/jobs')
@@ -13,7 +15,9 @@ export const Hotjobs = () => {
     },[])
   return (
     <div>
-      <h1 className='text-4xl font-bold text-primary my-9 text-center'>New Jobs {jobs.length}</h1>
+      <h1 
+      className='text-4xl font-bold text-primary my-9 text-center'>
+        New Jobs {jobs.length}</h1>
         <div className='grid grid-cols-1  md:grid-cols-2  lg:grid-cols-4 gap-8 mx-2 my-16'>
             {
                 jobs.map(job=><Hotjobcard key={job._id} job={job}>
@@ -25,16 +29,17 @@ export const Hotjobs = () => {
   )
 }
 const Hotjobcard=({job})=>{
+   const defualtImg='https://res.cloudinary.com/dto6ulc5n/image/upload/v1742758272/icons8-redragon-96_oyy58g.png'
     const {title,location,jobType,category,applicationDeadline,salaryRange,description
       ,company,requirements,responsibilities,hr_email,hr_name,company_logo ,_id 
     }=job
     return(
         <div>
- <div className="card card-compact bg-base-100  shadow-xl">
+ <div className="card card-compact bg-base-100  shadow-xl h-full">
 <div className='flex items-center gap-2 m-2'>
 <figure>
     <img className='w-12'
-      src={company_logo}
+      src={company_logo ? company_logo : defualtImg}
       alt="company_logo" />
   </figure>
   <div>
@@ -42,16 +47,16 @@ const Hotjobcard=({job})=>{
     <div className='flex items-center gap-1'>
    
    <FaLocationDot></FaLocationDot>
-   <p>{location}</p>
+   <p>{location ? location : "Not Given"}</p>
     </div>
   </div>
 </div>
-  <div className="card-body flex flex-col justify-between min-h-[266px]">
+  <div className="card-body flex flex-col justify-between ">
     <h2 className="card-title">{title}
         <div className='badge badge-secondary'>New</div>
     </h2>
-    <p className=''>{description}</p>
-    <div className='flex gap-1 flex-wrap '>
+    <p className=' '>{description}</p>
+    <div className='flex gap-1 flex-wrap mt-2 '>
         {
              requirements && requirements.map((require,idx)=><p key={idx} className='bg-gray-200 hover:bg-gray-300 hover:text-primary rounded-md p-1'>{require}</p>)
         }
